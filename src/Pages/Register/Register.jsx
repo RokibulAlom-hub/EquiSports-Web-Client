@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BsGoogle } from "react-icons/bs"
 import { Link } from 'react-router-dom';
-
+import Swal from 'sweetalert2'
+import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 const Register = () => {
+    const {createUserByemail} = useContext(AuthContext);
     const handleRegister = e => {
         e.preventDefault()
 
@@ -13,6 +15,27 @@ const Register = () => {
         const password = form.get('password');
         
         console.log({name,photo,email,password});
+
+        createUserByemail(email,password)
+        .then(result => {
+            console.log(result.user);
+            Swal.fire({
+                title: '',
+                text: 'User Created successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            Swal.fire({
+                title: 'Error!',
+                text: "something wrong",
+                icon: 'error',
+                confirmButtonText: 'Cool'
+              })
+          });
         
     }
     return (

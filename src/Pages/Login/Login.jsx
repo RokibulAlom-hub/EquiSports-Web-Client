@@ -1,22 +1,63 @@
 import React, { useContext } from 'react';
-import { Form, Link } from 'react-router-dom'; 
+import { Form, Link } from 'react-router-dom';
+import Swal from 'sweetalert2'
 import { BsGoogle } from "react-icons/bs"
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 const Login = () => {
-    const{name} = useContext(AuthContext)
-    console.log(name);
-    
+    const { userLogin, userLogout} = useContext(AuthContext)
+
     const handleLogin = e => {
         e.preventDefault()
 
         const form = new FormData(e.target);
         const email = form.get('email');
         const password = form.get('password')
-        
-        console.log({email,password});
-        
-    }
 
+        console.log({ email, password });
+        userLogin(email,password)
+        .then(result => {
+            console.log("user logged in",result.user);
+            Swal.fire({
+                title: '',
+                text: 'Login successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              }) 
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            Swal.fire({
+                title: 'Error!',
+                text: "something wrong",
+                icon: 'error',
+                confirmButtonText: 'Cool'
+              })
+          });
+
+    }
+    const logout = ( ) => {
+        userLogout()
+        .then(() => {
+            console.log("log out done");
+            Swal.fire({
+                title: '',
+                text: 'Logout successfully',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              }) 
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            Swal.fire({
+                title: 'Error!',
+                text: "something wrong",
+                icon: 'error',
+                confirmButtonText: 'Cool'
+              })
+          });
+    }
     return (
         <div className='w-10/12 mx-auto min-h-screen'>
             <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -75,16 +116,16 @@ const Login = () => {
                             </button>
                         </div>
                     </form>
-                    {/* <button
-              onClick={Logout}
-              type="submit"
-              className="w-full px-4 my-3 py-2 bg-red-400 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              Logout
-            </button>
-            <div className="mt-6"> */}
                     <button
-                       
+                        onClick={logout}
+                        type="submit"
+                        className="w-full px-4 my-3 py-2 bg-red-400 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                        Logout
+                    </button>
+
+                    <button
+
                         className="w-full px-4 py-2 my-3 bg-gray-500 text-white 
               rounded-lg flex items-center justify-center gap-2"
                     >
