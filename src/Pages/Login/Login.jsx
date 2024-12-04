@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Form, Link } from 'react-router-dom'; 
 import { BsGoogle } from "react-icons/bs"
+import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 const Login = () => {
+    const{name} = useContext(AuthContext)
+    console.log(name);
+    
     const handleLogin = e => {
         e.preventDefault()
 
@@ -12,6 +16,7 @@ const Login = () => {
         console.log({email,password});
         
     }
+
     return (
         <div className='w-10/12 mx-auto min-h-screen'>
             <div className="flex items-center justify-center min-h-screen bg-gray-100">
