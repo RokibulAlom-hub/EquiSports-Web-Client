@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div>
+        <div className='w-10/12 mx-auto min-h-screen'>
           <h1>this is homepage</h1>  
         </div>
     );

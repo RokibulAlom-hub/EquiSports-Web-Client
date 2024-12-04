@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = () => {
     return (
-        <div>
+        <div className='w-10/12 mx-auto min-h-screen'>
            this is login page 
         </div>
     );
