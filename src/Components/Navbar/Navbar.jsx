@@ -74,7 +74,8 @@ const Navbar = () => {
                             <Link to='/login' onClick={logout} className="btn">Logout</Link>
                         </div>
                         : <div>
-                            <Link to='/login' className="btn">Login</Link>
+                            <Link to='/login' className="btn-sm mx-3">Login</Link>
+                            <Link to='/register' className="btn-sm">Register</Link>
                         </div>
                     }
                 </div>
