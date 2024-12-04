@@ -22,7 +22,7 @@ const AuthProvider = ({children}) => {
        const unsubscribe = onAuthStateChanged(auth,(currentuser) => {
             setUser(currentuser)
             console.log('observer is watching you', currentuser);
-            
+            setLoader(false)
         })
         return () =>  {
             unsubscribe ();
@@ -31,7 +31,9 @@ const AuthProvider = ({children}) => {
     const authData = {
         createUserByemail,
         userLogin,
-        userLogout
+        userLogout,
+        user,
+        loader
     }
     return (
         <AuthContext.Provider value={authData}>

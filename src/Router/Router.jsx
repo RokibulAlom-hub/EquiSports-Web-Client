@@ -4,6 +4,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Allequipment from "../Pages/Allequipment/Allequipment";
 import Home from "../Pages/Home/Home";
+import Privateroute from "../PrivateRouteAndPages/Privateroute/Privateroute";
+import Addequipment from "../PrivateRouteAndPages/PrivatePages/Addequipment";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +27,12 @@ const router = createBrowserRouter([
             {
                 path:'/Allequipment',
                 element:<Allequipment></Allequipment>
+            },
+            {
+                path:'/Addequipment',
+                element:<Privateroute>
+                    <Addequipment></Addequipment>
+                </Privateroute>
             },
         ]
     }
