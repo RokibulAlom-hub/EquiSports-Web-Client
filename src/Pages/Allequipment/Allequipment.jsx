@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Tablerow from '../../Components/Table/Tablerow';
 
 const Allequipment = () => {
@@ -29,11 +29,11 @@ const Allequipment = () => {
                                 <td className="border border-gray-300 px-4 py-2">{d.categoryName}</td>
                                 <td className="border border-gray-300 px-4 py-2">{d.price}</td>
                                 <td className="border border-gray-300 px-4 py-2">
-                                    <button
-                                        className="bg-primary text-white py-1 px-3 rounded hover:bg-primary-focus"
+                                    <Link to={`/details/${d._id}`}
+                                        className="bg-primary btn text-white py-1 px-3 rounded hover:bg-primary-focus"
                                     >
                                         View Details
-                                    </button>
+                                    </Link>
                                 </td>
                             </tr>
                             )
