@@ -4,7 +4,8 @@ import Sliders from '../../Components/Slides/Sliders';
 const Home = () => {
     return (
         <div className='w-10/12 mx-auto min-h-screen'>
-          <Sliders></Sliders>  
+          <Sliders></Sliders>
+            
         </div>
     );
 };

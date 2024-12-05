@@ -64,7 +64,10 @@ const Navbar = () => {
                         <Link to='/register'>Register</Link>
                         <Link to='/allEquipment'>Allequipment</Link>
                         {
-                            user? <Link to='/Addequipment'>Addequipment</Link> : ''
+                            user? <div>
+                                <Link to='/Addequipment'>Addequipment</Link>
+                                <Link to='/MyequipmentPage'>MyequipmentPage</Link>
+                            </div> : ''
                         }
                     </ul>
                 </div>
