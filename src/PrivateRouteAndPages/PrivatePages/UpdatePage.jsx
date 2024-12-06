@@ -37,7 +37,12 @@ const UpdatePage = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            alert('document updated')
+            Swal.fire({
+                title: 'Data updated',
+                text: "Data updated successfully",
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
         })
         
     }

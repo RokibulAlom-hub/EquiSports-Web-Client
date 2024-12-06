@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 import { Link } from 'react-router-dom';
-
+import Swal from 'sweetalert2'
 const MyequipmentPage = () => {
     const {user} = useContext(AuthContext)
     const[loaddata,setLoaddata] = useState([]);
@@ -25,7 +25,12 @@ const MyequipmentPage = () => {
             const remaining = loaddata.filter(d => d._id !== _id);
             setLoaddata(remaining)
 
-            alert('data delted successfully from database')
+            Swal.fire({
+                title: 'Data Deleted',
+                text: "Data deted successfully",
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
         })
     }
     return (

@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import Tablerow from '../../Components/Table/Tablerow';
 
 const Allequipment = () => {
     const loaddata = useLoaderData();
     console.log(loaddata);
+    const [sorting,setSorting] = useState(loaddata);
+    const handleSortByPrice =() => {
+        const sorted = [...sorting].sort((a,b) => a.price - b.price)
+        setSorting(sorted)
+    }
 
     return (
         <div className="container mx-auto p-6 w-10/12 min-h-screen">
             <h1 className="text-3xl font-bold mb-6 text-center">All Sports Equipment</h1>
-
+            <div className="flex justify-end mb-4">
+                <button
+                    onClick={handleSortByPrice}
+                    className="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600"
+                >
+                    Sort by Price
+                </button>
+            </div>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full border-collapse border border-gray-300">
                     <thead>

@@ -48,11 +48,15 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[500] mt-3 w-52 p-2 shadow">
                             <Link to='/'>Home</Link>
-                            <Link to='/login'>Login</Link>
-                            <Link to='/register'>Register</Link>
                             <Link to='/allEquipment'>Allequipment</Link>
+                            {
+                            user? <div className='flex flex-col'> 
+                                <Link to='/Addequipment'>Addequipment</Link>
+                                <Link to='/MyequipmentPage'>MyequipmentPage</Link>
+                            </div> : ''
+                        }
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-xl">GearChamps</a>
@@ -60,11 +64,9 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu space-x-3 menu-horizontal px-1">
                         <Link to='/'>Home</Link>
-                        <Link to='/login'>Login</Link>
-                        <Link to='/register'>Register</Link>
                         <Link to='/allEquipment'>Allequipment</Link>
                         {
-                            user? <div>
+                            user? <div className='space-x-2'>
                                 <Link to='/Addequipment'>Addequipment</Link>
                                 <Link to='/MyequipmentPage'>MyequipmentPage</Link>
                             </div> : ''
@@ -73,7 +75,8 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user?<div>
+                        user?<div className='flex gap-2 justify-center items-center'>
+                            <img className='w-10 h-10 rounded-lg' src={user.photoURL} alt=""  title={user.displayName} />
                             <Link to='/login' onClick={logout} className="btn">Logout</Link>
                         </div>
                         : <div>

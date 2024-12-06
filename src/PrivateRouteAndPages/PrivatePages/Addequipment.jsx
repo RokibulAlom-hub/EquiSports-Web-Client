@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
-
+import Swal from 'sweetalert2'
 const Addequipment = () => {
     const{user} = useContext(AuthContext)
     const handleAdd = e => {
@@ -33,7 +33,12 @@ const Addequipment = () => {
         .then(res => res.json())
         .then(data => {
             console.log("data created in the database successfuly",data);
-            alert('data created in the database successfuly')
+            Swal.fire({
+                title: 'Equipment Added',
+                text: "Added successfully",
+                icon: 'success',
+                confirmButtonText: 'Done'
+              })
         })
     }
     return (
@@ -142,7 +147,7 @@ const Addequipment = () => {
                 <div className="flex flex-col">
                     <label htmlFor="stockStatus" className="text-lg font-medium mb-2">Stock Status</label>
                     <input
-                        type="number"
+                        type="text"
                         id="stockStatus"
                         name="stockStatus"
                         placeholder="Enter available quantity"

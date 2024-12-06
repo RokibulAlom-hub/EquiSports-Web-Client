@@ -4,21 +4,25 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 const Register = () => {
-    const {createUserByemail} = useContext(AuthContext);
+    const {createUserByemail,updateUserData,user,setUser} = useContext(AuthContext);
     const handleRegister = e => {
         e.preventDefault()
 
         const form = new FormData(e.target);
         const name = form.get('name');
-        const photo = form.get('photo');
+        const photoURL = form.get('photoURL');
         const email = form.get('email');
         const password = form.get('password');
         
-        console.log({name,photo,email,password});
+        console.log({name,photoURL,email,password});
 
-        createUserByemail(email,password)
+        createUserByemail(email,password,name,photoURL)
         .then(result => {
             console.log(result.user);
+            updateUserData({ displayName: name, photoURL: photoURL })
+            .then(() => {
+              setUser({ displayName: name, photoURL: photoURL, ...user })
+            })
             Swal.fire({
                 title: '',
                 text: 'User Created successfully',
