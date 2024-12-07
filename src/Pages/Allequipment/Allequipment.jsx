@@ -3,11 +3,13 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const Allequipment = () => {
     const loaddata = useLoaderData();
-    console.log(loaddata);
     const [sorting,setSorting] = useState(loaddata);
     const handleSortByPrice =() => {
-        const sorted = [...sorting].sort((a,b) => a.price - b.price)
-        setSorting(sorted)
+        fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/sort`)
+        .then(res => res.json())
+        .then(data => {
+            setSorting(data)
+        })
     }
 
     return (

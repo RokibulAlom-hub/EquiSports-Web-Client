@@ -6,7 +6,7 @@ const MyequipmentPage = () => {
     const {user} = useContext(AuthContext)
     const[loaddata,setLoaddata] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/equipments/user/${user.email}`)
+        fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/user/${user.email}`)
         .then(res => res.json())
         .then(data => {
             setLoaddata(data)
@@ -15,7 +15,7 @@ const MyequipmentPage = () => {
     console.log(loaddata);
     const handleDelete = _id => {
         console.log('is im getting the id ',_id);
-        fetch(`http://localhost:5000/equipments/${_id}`, {
+        fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/${_id}`, {
             method:"DELETE"
         })
         .then(res => res.json())

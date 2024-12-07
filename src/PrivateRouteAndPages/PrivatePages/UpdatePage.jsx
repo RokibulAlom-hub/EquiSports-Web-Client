@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProviderFile/AuthProvider";
-
+import Swal from 'sweetalert2'
 
 const UpdatePage = () => {
     const {user} = useContext(AuthContext)
     const loaddata = useLoaderData();
-    console.log(loaddata);
+    console.log(loaddata)
+    const { imageURL,itemName,categoryName,
+        description,price,rating,customization,
+        processingTime,stockStatus,} = loaddata
     const handleupdate = e =>{
         e.preventDefault()
         const form = new FormData(e.target);
@@ -14,12 +17,11 @@ const UpdatePage = () => {
         const itemName= form.get('itemName');
         const categoryName= form.get('categoryName');
         const description= form.get('description');
-        const price= form.get('price');
+        const price = parseInt(form.get('price'));
         const rating= form.get('rating');
         const customization= form.get('customization');
         const processingTime= form.get('processingTime');
         const stockStatus= form.get('stockStatus');
-
         const allInfo = {
             imageURL,itemName,categoryName,
             description,price,rating,customization,
@@ -27,7 +29,7 @@ const UpdatePage = () => {
             userName: user.displayName,
         }
         console.log(allInfo);
-        fetch(`http://localhost:5000/equipments/${loaddata._id}`,{
+        fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/${loaddata._id}`,{
             method:"PATCH",
             headers:{
                 "content-type": "application/json"
@@ -58,7 +60,7 @@ const UpdatePage = () => {
                         type="text"
                         id="image"
                         name="image"
-                        placeholder=" imageURL"
+                       defaultValue={imageURL}
                         className="border border-gray-300 rounded-lg p-2"
                     />
                 </div>
@@ -70,7 +72,7 @@ const UpdatePage = () => {
                         type="text"
                         id="itemName"
                         name="itemName"
-                        placeholder="Enter item name"
+                       defaultValue={itemName}
                         className="border border-gray-300 rounded-lg p-2"
                     />
                 </div>
@@ -82,7 +84,7 @@ const UpdatePage = () => {
                         type="text"
                         id="categoryName"
                         name="categoryName"
-                        placeholder="Enter category name"
+                       defaultValue={categoryName}
                         className="border border-gray-300 rounded-lg p-2"
                     />
                 </div>
@@ -94,7 +96,7 @@ const UpdatePage = () => {
                         id="description"
                         name="description"
                         rows="4"
-                        placeholder="Enter product description"
+                       defaultValue={description}
                         className="border border-gray-300 rounded-lg p-2"
                     ></textarea>
                 </div>
@@ -103,11 +105,10 @@ const UpdatePage = () => {
                 <div className="flex flex-col">
                     <label htmlFor="price" className="text-lg font-medium mb-2">Price</label>
                     <input
-                        type="text"
+                        type="number"
                         id="price"
                         name="price"
-                        defaultValue={"$"}
-                        placeholder="Enter price"
+                       defaultValue={price}
                         className="border border-gray-300 rounded-lg p-2"
                     />
                 </div>
@@ -119,7 +120,7 @@ const UpdatePage = () => {
                         type="text"
                         id="rating"
                         name="rating"
-                        placeholder="Enter rating"
+                       defaultValue={rating}
                         className="border border-gray-300 rounded-lg p-2"
                     />
                 </div>
@@ -131,7 +132,7 @@ const UpdatePage = () => {
                         type="text"
                         id="customization"
                         name="customization"
-                        placeholder="Enter customization details"
+                       defaultValue={customization}
                         className="border border-gray-300 rounded-lg p-2"
                     />
                 </div>
@@ -143,7 +144,7 @@ const UpdatePage = () => {
                         type="text"
                         id="processingTime"
                         name="processingTime"
-                        placeholder="Enter delivery time"
+                       defaultValue={processingTime}
                         className="border border-gray-300 rounded-lg p-2"
                     />
                 </div>
@@ -155,7 +156,7 @@ const UpdatePage = () => {
                         type="number"
                         id="stockStatus"
                         name="stockStatus"
-                        placeholder="Enter available quantity"
+                       defaultValue={stockStatus}
                         className="border border-gray-300 rounded-lg p-2"
                     />
                 </div>

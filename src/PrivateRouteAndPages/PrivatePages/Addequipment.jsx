@@ -23,7 +23,7 @@ const Addequipment = () => {
             userName: user.displayName,
         }
         console.log(allInfo);
-        fetch('http://localhost:5000/equipments',{
+        fetch('https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments',{
             method:"POST",
             headers:{
                 'content-type': 'application/json'
@@ -98,10 +98,9 @@ const Addequipment = () => {
                 <div className="flex flex-col">
                     <label htmlFor="price" className="text-lg font-medium mb-2">Price</label>
                     <input
-                        type="text"
+                        type="number"
                         id="price"
                         name="price"
-                        defaultValue={"$"}
                         placeholder="Enter price"
                         className="border border-gray-300 rounded-lg p-2"
                     />

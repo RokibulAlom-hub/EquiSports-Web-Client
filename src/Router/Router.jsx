@@ -18,7 +18,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:() => fetch('http://localhost:5000/equipments')
+                loader:() => fetch('https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments')
             },
             {
                 path:'/login',
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path:'/Allequipment',
                 element:<Allequipment></Allequipment>,
-                loader:() => fetch(`http://localhost:5000/equipments`)
+                loader:() => fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments`)
             },
             {
                 path:'/Addequipment',
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
                 element:<Privateroute>
                     <ProductDetails></ProductDetails>
                 </Privateroute>,
-                loader:({params}) => fetch(`http://localhost:5000/equipments/${params.id}`)
+                loader:({params}) => fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/${params.id}`)
             },
             {
                 path:'/MyequipmentPage',
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
                 element:<Privateroute>
                     <UpdatePage></UpdatePage>
                 </Privateroute>,
-                loader:({params}) => fetch(`http://localhost:5000/equipments/${params.id}`)
+                loader:({params}) => fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/${params.id}`)
             },
         ]
     }
