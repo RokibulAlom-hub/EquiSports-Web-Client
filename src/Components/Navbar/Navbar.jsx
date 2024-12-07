@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 import Swal from 'sweetalert2'
+import "./Navbar.css"
 const Navbar = () => {
     const {user, userLogout} = useContext(AuthContext);
     console.log(user);

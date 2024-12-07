@@ -1,0 +1,12 @@
+[
+    { "id": 1, "categoryName": "Basketball" },
+    { "id": 2, "categoryName": "Football" },
+    { "id": 3, "categoryName": "Tennis" },
+    { "id": 4, "categoryName": "Cricket" },
+    { "id": 5, "categoryName": "Badminton" },
+    { "id": 6, "categoryName": "Hockey" },
+    { "id": 7, "categoryName": "Golf" },
+    { "id": 8, "categoryName": "Swimming" },
+    { "id": 9, "categoryName": "Baseball" },
+    { "id": 10, "categoryName": "Volleyball" }
+]

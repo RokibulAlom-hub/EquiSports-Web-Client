@@ -34,7 +34,7 @@ const Allequipment = () => {
                     </thead>
                     <tbody>
                         {
-                            loaddata.map((d,id)=> <tr key={id}>
+                            sorting.map((d,id)=> <tr key={id}>
                                 <td className="border border-gray-300 px-4 py-2">{id+1}</td>
                                 <td className="border border-gray-300 px-4 py-2">{d.itemName}</td>
                                 <td className="border border-gray-300 px-4 py-2">{d.categoryName}</td>
