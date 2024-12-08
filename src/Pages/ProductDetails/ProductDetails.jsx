@@ -15,9 +15,9 @@ const ProductDetails = () => {
                     {/* Image Section */}
                     <div className="h-64 bg-gray-200">
                         <img
-                            src="https://via.placeholder.com/600x400"
+                            src={imageURL}
                             alt="Product"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full "
                         />
                     </div>
 

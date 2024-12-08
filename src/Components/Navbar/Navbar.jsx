@@ -78,15 +78,15 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <div className='flex gap-2 justify-center items-center'>
-                            <img className='w-10 h-10 rounded-lg' 
+                            <img className='w-10 h-10 hidden md:block rounded-lg' 
                             src={user.photoURL} alt="" data-tooltip-id="my-tooltip" 
                             data-tooltip-content={user.displayName} />
                             <NavLink  to='/login' onClick={logout} className="btn">Logout</NavLink>
                             <Tooltip id="my-tooltip" />
                         </div>
                             : <div>
-                                <NavLink  to='/login' className="btn-sm mx-3">Login</NavLink>
-                                <NavLink to='/register' className="btn-sm">Register</NavLink>
+                                <NavLink  to='/login' className="btn mx-3">Login</NavLink>
+                                <NavLink to='/register' className="btn">Register</NavLink>
                             </div>
                     }
                 </div>

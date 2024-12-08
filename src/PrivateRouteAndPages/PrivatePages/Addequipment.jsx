@@ -39,6 +39,7 @@ const Addequipment = () => {
                 icon: 'success',
                 confirmButtonText: 'Done'
               })
+              form.reset()
         })
     }
     return (
