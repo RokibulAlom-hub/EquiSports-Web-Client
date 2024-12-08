@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const MyequipmentPage = () => {
     const {user} = useContext(AuthContext)
-    console.log(user);
+    // console.log(user);
     
     const[loaddata,setLoaddata] = useState([]);
     useEffect(() => {
@@ -14,15 +14,15 @@ const MyequipmentPage = () => {
             setLoaddata(data)
         })
     },[user.email])
-    console.log(loaddata);
+    // console.log(loaddata);
     const handleDelete = _id => {
-        console.log('is im getting the id ',_id);
+        // console.log('is im getting the id ',_id);
         fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/${_id}`, {
             method:"DELETE"
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             
             const remaining = loaddata.filter(d => d._id !== _id);
             setLoaddata(remaining)

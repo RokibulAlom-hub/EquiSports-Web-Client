@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 const UpdatePage = () => {
     const {user} = useContext(AuthContext)
     const loaddata = useLoaderData();
-    console.log(loaddata)
+    // console.log(loaddata)
     const { imageURL,itemName,categoryName,
         description,price,rating,customization,
         processingTime,stockStatus,} = loaddata
@@ -28,7 +28,7 @@ const UpdatePage = () => {
             processingTime,stockStatus,email: user?.email,
             userName: user.displayName,
         }
-        console.log(allInfo);
+        // console.log(allInfo);
         fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/${loaddata._id}`,{
             method:"PATCH",
             headers:{
@@ -38,7 +38,7 @@ const UpdatePage = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             Swal.fire({
                 title: 'Data updated',
                 text: "Data updated successfully",

@@ -13,10 +13,10 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password')
 
-        console.log({ email, password });
+        // console.log({ email, password });
         userLogin(email,password)
         .then(result => {
-            console.log("user logged in",result.user);
+            // console.log("user logged in",result.user);
             Swal.fire({
                 title: '',
                 text: 'Login successfully',
@@ -26,7 +26,7 @@ const Login = () => {
         })
         .catch((error) => {
             const errorMessage = error.message;
-            console.log(errorMessage);
+            // console.log(errorMessage);
             Swal.fire({
                 title: 'Error!',
                 text: "something wrong",

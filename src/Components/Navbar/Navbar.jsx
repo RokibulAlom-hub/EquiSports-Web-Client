@@ -6,11 +6,11 @@ import { Tooltip } from 'react-tooltip'
 import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     const { user, userLogout } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
     const logout = () => {
         userLogout()
             .then(() => {
-                console.log("log out done");
+                // console.log("log out done");
                 Swal.fire({
                     title: '',
                     text: 'Logout successfully',
@@ -20,7 +20,7 @@ const Navbar = () => {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                // console.log(errorMessage);
                 Swal.fire({
                     title: 'Error!',
                     text: "something wrong",

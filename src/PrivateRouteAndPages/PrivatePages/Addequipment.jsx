@@ -22,7 +22,7 @@ const Addequipment = () => {
             processingTime,stockStatus,email: user?.email,
             userName: user.displayName,
         }
-        console.log(allInfo);
+        // console.log(allInfo);
         fetch('https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments',{
             method:"POST",
             headers:{
@@ -32,7 +32,7 @@ const Addequipment = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log("data created in the database successfuly",data);
+            // console.log("data created in the database successfuly",data);
             Swal.fire({
                 title: 'Equipment Added',
                 text: "Added successfully",
