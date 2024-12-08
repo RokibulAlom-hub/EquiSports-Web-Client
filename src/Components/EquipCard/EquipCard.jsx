@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EquipCard = ({ data }) => {
-    console.log(data);
     const {rating,price,categoryName,itemName,imageURL,_id} = data;
     return (
         <div>

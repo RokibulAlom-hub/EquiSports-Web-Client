@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "rating": 5,
+      "comment": "Fantastic quality! The equipment exceeded my expectations. Will definitely shop here again.",
+      "date": "2024-11-15"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "rating": 4,
+      "comment": "Good variety and reasonable prices. Delivery was quick and hassle-free.",
+      "date": "2024-10-28"
+    },
+    {
+      "id": 3,
+      "name": "Chris Johnson",
+      "rating": 3,
+      "comment": "The product is decent but the packaging could be improved. Overall satisfied.",
+      "date": "2024-09-22"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "rating": 5,
+      "comment": "Excellent customer service! They helped me choose the right equipment for my needs.",
+      "date": "2024-08-10"
+    },
+    {
+      "id": 5,
+      "name": "Michael Brown",
+      "rating": 4,
+      "comment": "Great equipment but a bit pricey. Still, the quality justifies the cost.",
+      "date": "2024-07-05"
+    },
+    {
+      "id": 6,
+      "name": "Sarah Wilson",
+      "rating": 5,
+      "comment": "Absolutely love my new gear! Will recommend to all my friends.",
+      "date": "2024-06-18"
+    }
+  ]
+  
