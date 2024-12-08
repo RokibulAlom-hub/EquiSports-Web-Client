@@ -3,34 +3,35 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 import Swal from 'sweetalert2'
 import "./Navbar.css"
+import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
-    const {user, userLogout} = useContext(AuthContext);
+    const { user, userLogout } = useContext(AuthContext);
     console.log(user);
-    const logout = ( ) => {
+    const logout = () => {
         userLogout()
-        .then(() => {
-            console.log("log out done");
-            Swal.fire({
-                title: '',
-                text: 'Logout successfully',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-              }) 
-        })
-        .catch((error) => {
-            const errorMessage = error.message;
-            console.log(errorMessage);
-            Swal.fire({
-                title: 'Error!',
-                text: "something wrong",
-                icon: 'error',
-                confirmButtonText: 'Cool'
-              })
-          });
+            .then(() => {
+                console.log("log out done");
+                Swal.fire({
+                    title: '',
+                    text: 'Logout successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+                Swal.fire({
+                    title: 'Error!',
+                    text: "something wrong",
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+            });
     }
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-[#1a1a3e] text-[#ffffff]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,11 +54,11 @@ const Navbar = () => {
                             <Link to='/'>Home</Link>
                             <Link to='/allEquipment'>Allequipment</Link>
                             {
-                            user? <div className='flex flex-col'> 
-                                <Link to='/Addequipment'>Addequipment</Link>
-                                <Link to='/MyequipmentPage'>MyequipmentPage</Link>
-                            </div> : ''
-                        }
+                                user ? <div className='flex flex-col'>
+                                    <Link to='/Addequipment'>Addequipment</Link>
+                                    <Link to='/MyequipmentPage'>MyequipmentPage</Link>
+                                </div> : ''
+                            }
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-xl">GearChamps</a>
@@ -67,7 +68,7 @@ const Navbar = () => {
                         <Link to='/'>Home</Link>
                         <Link to='/allEquipment'>Allequipment</Link>
                         {
-                            user? <div className='space-x-2'>
+                            user ? <div className='space-x-2'>
                                 <Link to='/Addequipment'>Addequipment</Link>
                                 <Link to='/MyequipmentPage'>MyequipmentPage</Link>
                             </div> : ''
@@ -76,14 +77,17 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user?<div className='flex gap-2 justify-center items-center'>
-                            <img className='w-10 h-10 rounded-lg' src={user.photoURL} alt=""  title={user.displayName} />
+                        user ? <div className='flex gap-2 justify-center items-center'>
+                            <img className='w-10 h-10 rounded-lg' 
+                            src={user.photoURL} alt="" data-tooltip-id="my-tooltip" 
+                            data-tooltip-content={user.displayName} />
                             <Link to='/login' onClick={logout} className="btn">Logout</Link>
+                            <Tooltip id="my-tooltip" />
                         </div>
-                        : <div>
-                            <Link to='/login' className="btn-sm mx-3">Login</Link>
-                            <Link to='/register' className="btn-sm">Register</Link>
-                        </div>
+                            : <div>
+                                <Link to='/login' className="btn-sm mx-3">Login</Link>
+                                <Link to='/register' className="btn-sm">Register</Link>
+                            </div>
                     }
                 </div>
             </div>

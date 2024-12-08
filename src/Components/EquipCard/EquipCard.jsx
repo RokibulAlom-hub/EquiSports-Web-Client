@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { Fade, Slide } from "react-awesome-reveal";
 const EquipCard = ({ data }) => {
-    const {rating,price,categoryName,itemName,imageURL,_id} = data;
+    const { rating, price, categoryName, itemName, imageURL, _id } = data;
     return (
-        <div>
+        <Fade delay={0.6}>
             <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
                 {/* Image Section */}
+                <Slide delay={1}>
                 <img
                     src={`${imageURL}`} // Replace with dynamic image URL
                     alt="Item"
                     className="w-full h-48 object-cover"
                 />
-
+                </Slide>
                 {/* Content Section */}
                 <div className="p-6 space-y-4">
                     {/* Item Name */}
@@ -30,15 +31,14 @@ const EquipCard = ({ data }) => {
 
                     {/* View Details Button */}
                     <Link to={`/details/${_id}`}
-                        
+
                         className="block w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-focus"
                     >
                         View Details
                     </Link>
                 </div>
             </div>
-
-        </div>
+        </Fade>
     );
 };
 
