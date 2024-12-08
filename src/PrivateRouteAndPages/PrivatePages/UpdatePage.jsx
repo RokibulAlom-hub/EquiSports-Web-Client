@@ -103,7 +103,7 @@ const UpdatePage = () => {
 
                 {/* Price */}
                 <div className="flex flex-col">
-                    <label htmlFor="price" className="text-lg font-medium mb-2">Price</label>
+                    <label  className="text-lg font-medium mb-2">Price</label>
                     <input
                         type="number"
                         id="price"

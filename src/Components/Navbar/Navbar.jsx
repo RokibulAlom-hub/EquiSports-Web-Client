@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 import Swal from 'sweetalert2'
 import "./Navbar.css"
 import { Tooltip } from 'react-tooltip'
+import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     const { user, userLogout } = useContext(AuthContext);
     console.log(user);
@@ -51,12 +51,12 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[500] mt-3 w-52 p-2 shadow">
-                            <Link to='/'>Home</Link>
-                            <Link to='/allEquipment'>Allequipment</Link>
+                            <NavLink className='btn' to='/'>Home</NavLink>
+                            <NavLink className='btn' to='/allEquipment'>Allequipment</NavLink>
                             {
                                 user ? <div className='flex flex-col'>
-                                    <Link to='/Addequipment'>Addequipment</Link>
-                                    <Link to='/MyequipmentPage'>MyequipmentPage</Link>
+                                    <NavLink className='btn' to='/Addequipment'>Addequipment</NavLink>
+                                    <NavLink className='btn' to='/MyequipmentPage'>MyequipmentPage</NavLink>
                                 </div> : ''
                             }
                         </ul>
@@ -65,12 +65,12 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu space-x-3 menu-horizontal px-1">
-                        <Link to='/'>Home</Link>
-                        <Link to='/allEquipment'>Allequipment</Link>
+                        <NavLink className='btn' to='/'>Home</NavLink>
+                        <NavLink className='btn' to='/allEquipment'>Allequipment</NavLink>
                         {
                             user ? <div className='space-x-2'>
-                                <Link to='/Addequipment'>Addequipment</Link>
-                                <Link to='/MyequipmentPage'>MyequipmentPage</Link>
+                                <NavLink className='btn' to='/Addequipment'>Addequipment</NavLink>
+                                <NavLink className='btn' to='/MyequipmentPage'>MyequipmentPage</NavLink>
                             </div> : ''
                         }
                     </ul>
@@ -81,12 +81,12 @@ const Navbar = () => {
                             <img className='w-10 h-10 rounded-lg' 
                             src={user.photoURL} alt="" data-tooltip-id="my-tooltip" 
                             data-tooltip-content={user.displayName} />
-                            <Link to='/login' onClick={logout} className="btn">Logout</Link>
+                            <NavLink  to='/login' onClick={logout} className="btn">Logout</NavLink>
                             <Tooltip id="my-tooltip" />
                         </div>
                             : <div>
-                                <Link to='/login' className="btn-sm mx-3">Login</Link>
-                                <Link to='/register' className="btn-sm">Register</Link>
+                                <NavLink  to='/login' className="btn-sm mx-3">Login</NavLink>
+                                <NavLink to='/register' className="btn-sm">Register</NavLink>
                             </div>
                     }
                 </div>

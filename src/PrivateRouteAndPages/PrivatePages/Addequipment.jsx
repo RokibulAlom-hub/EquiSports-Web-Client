@@ -10,7 +10,7 @@ const Addequipment = () => {
         const itemName= form.get('itemName');
         const categoryName= form.get('categoryName');
         const description= form.get('description');
-        const price= form.get('price');
+        const price = parseInt(form.get('price'));
         const rating= form.get('rating');
         const customization= form.get('customization');
         const processingTime= form.get('processingTime');
