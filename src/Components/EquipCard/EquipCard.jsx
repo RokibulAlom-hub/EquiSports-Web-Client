@@ -12,7 +12,7 @@ const EquipCard = ({data}) => {
           <img
             src={`${imageURL}`} // Replace with dynamic image URL
             alt="Item"
-            className="w-full h-48 object-cover"
+            className="w-full rounded h-48 object-cover"
           />
         </Slide>
         {/* Content Section */}

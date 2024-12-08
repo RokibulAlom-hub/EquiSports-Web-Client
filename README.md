@@ -1,6 +1,6 @@
 # EquiSports: A Sports Equipment Online Store 🏀⚽🎾
 
-**Live Site URL:** [EquiSports Live](your-live-site-link-here)
+**Live Site URL:** [EquiSports Live](https://gearchamp-authentication.web.app/)
 
 EquiSports is a responsive, feature-packed e-commerce platform for sports enthusiasts. Whether you're a professional athlete or just starting out, EquiSports offers a seamless experience to browse, purchase, and manage a wide range of sports equipment and apparel.  
 
