@@ -4,11 +4,11 @@ import Rating from 'react-rating';
 
 const Review = () => {
   return (
-    <section className="p-6 bg-softWhite dark:bg-navyBlue text-navyBlue dark:text-softWhite">
+    <section className=" bg-softWhite dark:bg-navyBlue text-navyBlue w-10/12 mx-auto pb-5  dark:text-softWhite">
       <h2 className="text-2xl font-bold mb-4 text-center">Customer Reviews</h2>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
         {reviews.map((review) => (
-          <div key={review.id} className="p-4 bg-lightCyan dark:bg-cyan rounded shadow-lg">
+          <div key={review.id} className="p-4 bg-lightCyan border border-red-500 dark:bg-cyan rounded shadow-lg">
             <h3 className="font-bold text-lg">{review.name}</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">{new Date(review.date).toLocaleDateString()}</p>
             <p className="my-2">{review.comment}</p>

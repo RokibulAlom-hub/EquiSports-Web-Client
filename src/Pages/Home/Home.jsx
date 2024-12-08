@@ -5,7 +5,6 @@ import EquipCard from '../../Components/EquipCard/EquipCard';
 import Category from '../../../public/Category.json';
 import ThemeChange from '../../Components/ThemeChange/ThemeChange';
 import Reveiw from '../../Components/Reveiw/Reveiw';
-import MyComponent from '../../Components/MyComponent/MyComponent';
 const Home = () => {
   const loaddata = useLoaderData();
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -16,9 +15,9 @@ const Home = () => {
       : loaddata.filter((item) => item.categoryName === selectedCategory);
 
   return (
-    <div className="min-h-screen w-10/12 mx-auto bg-white dark:bg-gray-900 dark:text-white">
+    <div className="min-h-screen  bg-white dark:bg-gray-900 dark:text-white">
       {/* Theme Toggle */}
-      <div className="flex justify-end py-4">
+      <div className="flex justify-center py-4">
         <ThemeChange />
       </div>
 
@@ -56,14 +55,13 @@ const Home = () => {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 my-10 w-10/12 mx-auto">
         {filteredData.map((data) => (
           <EquipCard key={data._id} data={data} />
         ))}
       </div>
       {/* reveiw */}
       <Reveiw></Reveiw>
-      <MyComponent></MyComponent>
     </div>
   );
 };

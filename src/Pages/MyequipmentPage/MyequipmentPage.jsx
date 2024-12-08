@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const MyequipmentPage = () => {
     const {user} = useContext(AuthContext)
+    console.log(user);
+    
     const[loaddata,setLoaddata] = useState([]);
     useEffect(() => {
         fetch(`https://b10-a10-server-side-rokibul-alom-hub.vercel.app/equipments/user/${user.email}`)

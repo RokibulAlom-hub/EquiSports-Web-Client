@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import { BsGoogle } from "react-icons/bs"
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 const Login = () => {
-    const { userLogin} = useContext(AuthContext)
+    const { userLogin,googlelogin} = useContext(AuthContext)
 
     const handleLogin = e => {
         e.preventDefault()
@@ -36,7 +36,20 @@ const Login = () => {
           });
 
     }
-
+    const handlegoggle = () => {
+        googlelogin()
+          .then((result) => {
+            // console.log(result.user);
+            Swal.fire({
+                title: '',
+                text: 'User Login successfully',
+                icon: 'success',
+                confirmButtonText: 'Done'
+              })
+          })
+          .catch((err) => console.log(err.message)
+          )
+      }
     return (
         <div className='w-10/12 mx-auto min-h-screen'>
             <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -97,7 +110,7 @@ const Login = () => {
                     </form>
 
                     <button
-
+                         onClick={handlegoggle}
                         className="w-full px-4 py-2 my-3 bg-gray-500 text-white 
               rounded-lg flex items-center justify-center gap-2"
                     >

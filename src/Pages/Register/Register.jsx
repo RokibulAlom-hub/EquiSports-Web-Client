@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../AuthProviderFile/AuthProvider';
 const Register = () => {
-    const {createUserByemail,updateUserData,user,setUser} = useContext(AuthContext);
+    const {createUserByemail,updateUserData,user,setUser,googlelogin} = useContext(AuthContext);
     const handleRegister = e => {
         e.preventDefault()
 
@@ -42,6 +42,20 @@ const Register = () => {
           });
         
     }
+    const handlegoggle = () => {
+        googlelogin()
+          .then((result) => {
+            console.log(result.user);
+            Swal.fire({
+                title: '',
+                text: 'User Created successfully',
+                icon: 'success',
+                confirmButtonText: 'Done'
+              })
+          })
+          .catch((err) => console.log(err.message)
+          )
+      }
     return (
         <div className='w-10/12 mx-auto min-h-screen'>
             <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
@@ -133,7 +147,7 @@ const Register = () => {
                     {/* google log in */}
                     <div className="mt-6">
                         <button
-                           
+                            onClick={handlegoggle}
                             className="w-full px-4 py-2 bg-gray-500 text-white 
               rounded-lg flex items-center justify-center gap-2"
                         >
