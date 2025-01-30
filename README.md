@@ -59,14 +59,6 @@ EquiSports is a responsive, feature-packed e-commerce platform for sports enthus
 
 ---
 
-## Deployment 🚀
-
-- **Frontend**: Hosted on [Netlify/Firebase/Surge](your-frontend-host-link-here).  
-- **Backend**: Hosted on [Vercel](your-backend-host-link-here).  
-
-Environment variables are used to securely manage Firebase configuration and MongoDB credentials.
-
----
 
 ## Technologies Used 🛠️
 
