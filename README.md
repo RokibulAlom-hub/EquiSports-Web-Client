@@ -13,11 +13,9 @@ Here’s your **7-point structured README** with all the essential details:
 EquiSports is a responsive e-commerce platform designed for sports enthusiasts. Whether you're a professional athlete or a beginner, this platform offers a seamless experience to browse, purchase, and manage a wide range of sports equipment and apparel. Users can register, add items, update listings, and view detailed product information.  
 
 ---
+ 
 
-## **2. Screenshot** 🖼️  
-
-![EquiSports Homepage](https://via.placeholder.com/1200x600.png?text=Project+Screenshot)  
-*(Replace with an actual screenshot of your project.)*  
+![Image](https://github.com/user-attachments/assets/3ae17dc6-a510-4e5a-84d1-635502c6269b)
 
 ---
 
