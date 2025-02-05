@@ -99,7 +99,7 @@ To run the project locally, follow these steps:
 
 ### **1. Clone the Repository**  
 ```bash
-git clone https://github.com/yourusername/EquiSports.git
+git clone [https://github.com/yourusername/EquiSports.git](https://github.com/RokibulAlom-hub/EquiSports-Web-Client)
 cd EquiSports
 ```
 
