@@ -56,10 +56,10 @@ const MyequipmentPage = () => {
                                 <td className="border border-gray-300 px-4 py-2">{id+1}</td>
                                 <td className="border border-gray-300 px-4 py-2">{d.itemName}</td>
                                 <td className="border border-gray-300 px-4 py-2">{d.categoryName}</td>
-                                <td className="border border-gray-300 px-4 py-2">{d.price}</td>
+                                <td className="border border-gray-300 px-4 py-2">{d.price} $</td>
                                 <td className="border border-gray-300 px-4 py-2">
                                     <Link to={`/UpdatePage/${d._id}`}
-                                        className=" btn bg-green-500 text-white mr-3 py-1 px-3 rounded"
+                                        className=" btn bg-[#27391C] text-white mr-3 py-1 px-3 rounded"
                                     >
                                         Update
                                     </Link>

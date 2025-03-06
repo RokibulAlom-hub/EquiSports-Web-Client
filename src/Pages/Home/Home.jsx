@@ -17,9 +17,9 @@ const Home = () => {
   return (
     <div className="min-h-screen  bg-white dark:bg-gray-900 dark:text-white">
       {/* Theme Toggle */}
-      <div className="flex justify-center py-4">
+      {/* <div className="flex justify-center py-4">
         <ThemeChange />
-      </div>
+      </div> */}
 
       {/* Sliders */}
       <Sliders />
@@ -31,19 +31,19 @@ const Home = () => {
           <button
             className={`px-4 py-2 rounded-lg ${selectedCategory === 'All'
                 ? 'bg-blue-500 text-white'
-                : 'bg-gray-200 dark:bg-gray-800 dark:text-white'
+                : 'bg-[#27391C] text-white'
               }`}
             onClick={() => setSelectedCategory('All')}
           >
             All
           </button>
-          <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2'>
+          <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3'>
             {Category.map((cat) => (
               <button
                 key={cat.id}
                 className={`px-4 py-2 rounded-lg ${selectedCategory === cat.categoryName
                     ? 'bg-blue-500 text-white'
-                    : 'bg-gray-200 dark:bg-gray-800 dark:text-white'
+                    : 'bg-[#27391C] text-white'
                   }`}
                 onClick={() => setSelectedCategory(cat.categoryName)}
               >

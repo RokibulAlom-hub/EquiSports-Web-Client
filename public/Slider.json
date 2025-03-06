@@ -1,27 +1,22 @@
 [
     {
       "id": 1,
-      "image": "https://i.ibb.co.com/tKLBnzW/pexels-florian-thomschke-833330274-19436350.jpg",
+      "image": "https://i.ibb.co.com/k278Pwqq/284.jpg",
       "title": "Premium Football Gear",
       "description": "Elevate your game with our high-quality football gear. Durable, reliable, and built for champions."
     },
     {
       "id": 2,
-      "image": "https://i.ibb.co.com/mCny7YY/pexels-shivamraw-20269342.jpg",
+      "image": "https://i.ibb.co.com/JwZ7zRjw/2148398824.jpg",
       "title": "Top-Notch Cricket Equipment",
       "description": "From bats to helmets, our cricket gear is designed for performance and safety on the field."
     },
     {
       "id": 3,
-      "image": "https://i.ibb.co.com/Thd0vZS/pexels-runobah-15476801.jpg",
+      "image": "  https://i.ibb.co.com/mV9kQzXD/2147604967.jpg",
       "title": "Basketball Essentials",
       "description": "Dominate the court with our premium basketballs, shoes, and accessories."
-    },
-    {
-      "id": 4,
-      "image": "https://i.ibb.co.com/48DqjZR/pexels-anastasiia-chaikovska-206547003-17522292.jpg",
-      "title": "Advanced Tennis Rackets",
-      "description": "Experience precision and power with our expertly crafted tennis rackets for all skill levels."
     }
   ]
-  
+
+

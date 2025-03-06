@@ -6,15 +6,15 @@ const EquipCard = ({data}) => {
     const { imageURL, itemName, categoryName, price, _id } = data;
    return (
     <Fade delay={0.6}>
-      <div className="max-w-sm mx-auto bg-white dark:bg-gray-800 shadow-lg border border-green-300 rounded-lg ">
+      <div className="max-w-sm mx-auto bg-white dark:bg-gray-800 shadow-lg  rounded-lg ">
         {/* Image Section */}
-        <Slide delay={1}>
+       
           <img
             src={`${imageURL}`} // Replace with dynamic image URL
             alt="Item"
             className="w-full rounded h-48 object-cover"
           />
-        </Slide>
+       
         {/* Content Section */}
         <div className="p-6 space-y-4">
           {/* Item Name */}
@@ -32,7 +32,7 @@ const EquipCard = ({data}) => {
 
           {/* View Details Button */}
           <Link to={`/details/${_id}`}
-            className="block w-full bg-primary dark:bg-yellow-400 text-white dark:text-gray-800 py-2 px-4 rounded-lg "
+            className="block w-full bg-[#27391C] text-white text-center py-2 px-4 rounded-lg "
           >
             View Details
           </Link>

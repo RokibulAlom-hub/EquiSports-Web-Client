@@ -18,7 +18,7 @@ const Allequipment = () => {
             <div className="flex justify-end mb-4">
                 <button
                     onClick={handleSortByPrice}
-                    className="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600"
+                    className="bg-[#27391C] text-white py-1 px-4 rounded hover:bg-red-600"
                 >
                     Sort by Price
                 </button>
@@ -40,10 +40,10 @@ const Allequipment = () => {
                                 <td className="border border-gray-300 px-4 py-2">{id+1}</td>
                                 <td className="border border-gray-300 px-4 py-2">{d.itemName}</td>
                                 <td className="border border-gray-300 px-4 py-2">{d.categoryName}</td>
-                                <td className="border border-gray-300 px-4 py-2">{d.price}</td>
+                                <td className="border border-gray-300 px-4 py-2">{d.price} $</td>
                                 <td className="border border-gray-300 px-4 py-2">
                                     <Link to={`/details/${d._id}`}
-                                        className="bg-primary btn text-white py-1 px-3 rounded hover:bg-primary-focus"
+                                        className="bg-[#27391C] btn text-white py-1 px-3 rounded hover:bg-red-600"
                                     >
                                         View Details
                                     </Link>

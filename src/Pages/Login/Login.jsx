@@ -102,7 +102,7 @@ const Login = () => {
                         <div className="mt-6">
                             <button
                                 type="submit"
-                                className="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                className="w-full px-4 py-2 bg-[#27391C] text-white rounded-lg"
                             >
                                 Login
                             </button>
@@ -111,7 +111,7 @@ const Login = () => {
 
                     <button
                          onClick={handlegoggle}
-                        className="w-full px-4 py-2 my-3 bg-gray-500 text-white 
+                        className="w-full px-4 py-2 my-3 bg-red-600 text-white 
               rounded-lg flex items-center justify-center gap-2"
                     >
                         <BsGoogle />

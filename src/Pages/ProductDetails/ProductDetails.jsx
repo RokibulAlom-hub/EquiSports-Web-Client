@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const ProductDetails = () => {
     const loadedInfo = useLoaderData()
@@ -76,12 +76,12 @@ const ProductDetails = () => {
 
                         {/* Action Buttons */}
                         <div className="flex space-x-4 mt-6">
-                            <button className="bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-focus">
+                            <button className="bg-red-600 text-white py-2 px-4 rounded-lg ">
                                 Add to Cart
                             </button>
-                            <button className="bg-secondary text-white py-2 px-4 rounded-lg hover:bg-secondary-focus">
+                            <Link to="/" className="bg-[#27391C] text-white py-2 px-4 rounded-lg ">
                                 Go Back
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
